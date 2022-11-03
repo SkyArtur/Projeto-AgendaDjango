@@ -15,6 +15,7 @@ h1, h2, h3{
 p, a{
     font-family: 'Roboto Mono', monospace;
     text-decoration: none;
+    color: #3a3a3a;
 }
 .grid-body{
     height: 100vh;

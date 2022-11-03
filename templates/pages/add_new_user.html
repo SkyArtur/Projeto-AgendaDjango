@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="ag-vw-top">
+        <h1>Novo Usuario</h1>
+    </div>
+    {% include 'includes/_messages.html' %}
+    <div class="ag-vw-form">
+        <div class="box-form">
+            <form class="bx-form" action="{% url 'add_new_user' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="name">Nome
+                    <input type="text"
+                    name="name"
+                    id="name"
+                    value="{{ request.POST.name }}"
+                    class="bx-form-inp">
+                </label>
+                <label for="lastname">Sobrenome
+                    <input type="text"
+                    name="lastname"
+                    id="lastname"
+                    value="{{ request.POST.lastname }}"
+                    class="bx-form-inp">
+                </label>
+                <label for="email">Email
+                    <input type="text"
+                    name="email"
+                    class="bx-form-inp">
+                </label>
+                <label for="password">Senha
+                    <input type="password"
+                    name="password"
+                    class="bx-form-inp">
+                </label>
+                <label for="confirm">Confirme a senha
+                    <input type="password"
+                    name="confirm"
+                    class="bx-form-inp">
+                </label>
+                <button style="height: 30px" class="bx-form-btn"><span>Register</span></button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -9,7 +9,7 @@
         <div class="box-form">
             <form class="bx-form" action="{% url 'login' %}" method="post">
                 {% csrf_token %}
-                <label for="username">Username:
+                <label for="username">Email:
                     <input type="text"
                     name="username"
                     value="{{ request.POST.username }}"

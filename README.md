@@ -1,6 +1,5 @@
 # Projeto-AgendaDjango
 
-> status: finalizado
 
 
 Meu primeiro contato com o framework Django. Para testar o projeto siga os seguintes passos:
