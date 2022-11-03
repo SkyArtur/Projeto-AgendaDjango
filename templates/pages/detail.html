@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="ag-vw-top">
+    <h1>{{ contact.name }} {{ contact.lastname }}</h1>
+</div>
+<div class="ag-vw-contact">
+    <div class="box-profile-ct">
+        <div class="bx-pr-img-ct">
+            <img style="border-radius: 100%" src="{{ contact.image.url }}" alt="file">
+        </div>
+        <div class="bx-pr-dta-ct">
+            <h6>{{ contact.email }}</h6>
+            <h5>{{ contact.relationship }}</h5>
+            <hr>
+            <p>{{ contact.phone }}</p>
+        </div>
+        <div class="bx-pr-dtl-ct">
+            <fieldset>
+                <legend>Detalhes</legend>
+                {{ contact.details }}
+            </fieldset>
+        </div>
+    </div>
+</div>    
+{% endblock content %}
+    
+                

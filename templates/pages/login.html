@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="ag-vw-top">
+        <h1>Login</h1>
+    </div>
+    {% include 'includes/_messages.html' %}
+    <div class="ag-vw-form">
+        <div class="box-form">
+            <form class="bx-form" action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <label for="username">Username:
+                    <input type="text"
+                    name="username"
+                    value="{{ request.POST.username }}"
+                    class="bx-form-inp">
+                </label>
+                <label for="password">Password:
+                    <input type="password"
+                    name="password"
+                    class="bx-form-inp">
+                </label>
+                <button type="submit" class="bx-form-btn">
+                    <span>Login</span>
+                    <span class="material-symbols-outlined">login</span>
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+    

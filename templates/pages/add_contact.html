@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="ag-vw-top">
+        <h1>Novo Contato</h1>
+    </div>
+    {% include 'includes/_messages.html' %}
+    <div class="ag-vw-form">
+        <div class="box-form">
+            <form class="bx-form" action="{% url 'add' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="name">Nome
+                    <input type="text"
+                    name="name"
+                    id="name"
+                    class="bx-form-inp">
+                </label>
+                <label for="lastname">Sobrenome
+                    <input type="text"
+                    name="lastname"
+                    class="bx-form-inp">
+                </label>
+                <label for="email">Email
+                    <input type="email"
+                    name="email"
+                    class="bx-form-inp">
+                </label>
+                <label for="phone">Telefone
+                    <input type="tel"
+                    name="phone"
+                    class="bx-form-inp">
+                </label>
+                <div class="bx-form-fl-rel">
+                    <label class="bx-lbl-file" for="img-inp" style="">
+                        <span class="material-symbols-outlined">add_a_photo</span>
+                        <input type="file" accept="image/*" name="image" id="img-inp">
+                        <span style="font-size: 12px" id="img-tag">selecione uma imagem</span>
+                    </label>
+                    <label class="bx-form-sel">
+                        <select name="relationship">
+                            <option value="" selected disabled>Categoria</option>
+                            {% for rel in relationship %}
+                            <option value="{{ rel.id }}">{{ rel.relationship }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                </div>
+                <fieldset class="bx-form-dt">
+                    <legend>Details</legend>
+                    <textarea name="details" id="" cols="30" rows="2"></textarea>
+                </fieldset>
+                <button style="height: 30px" class="bx-form-btn"><span>Register</span></button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

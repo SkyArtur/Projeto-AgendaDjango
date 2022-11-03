@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="ag-vw-top">
+        <h1>Agenda</h1>
+        <form action="{% url 'search' %}" method="get">
+            <label for="term">
+                <input
+                class="ag-vw-top-search"
+                placeholder="Buscar Contato"
+                type="search"
+                name="term"
+                value="{{ request.GET.term }}">
+            </label>
+        </form>
+    </div>
+    {% include 'includes/_messages.html' %}
+    <div class="ag-vw-list">
+        {% for contact in contacts %}
+        <div class="box-profile-lt">
+            <div class="bx-pr-img-lt">
+                <img style="border-radius: 100%" src="{{ contact.image.url }}" alt="profile image {{ contact.name }}">
+            </div>
+            <div class="bx-pr-dta-lt">
+                <h3>{{ contact.name }} {{ contact.lastname }}</h3>
+                <h6>{{ contact.email }}</h6>
+                <hr>
+                <p>{{ contact.phone }}</p>
+            </div>
+            <div class="bx-pr-btn-lt">
+                <a href="{% url 'detail' contact.id %}"><span class="material-symbols-outlined">contact_page</span></a>
+                <a id="del" href="{% url 'delete' contact.id %}"><span class="material-symbols-outlined">delete</span></a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
