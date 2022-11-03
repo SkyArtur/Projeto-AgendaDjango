@@ -3,13 +3,32 @@
 > status: finalizado
 
 
-Meu primeiro contato com o framework Django. Para testar o projeto sigua os seguintes passos:
-- no diretorio raiz "", utilizando o terminal da IDE de sua escola,
-crie os seguites diretórios:
+Meu primeiro contato com o framework Django. Para testar o projeto siga os seguintes passos:
+- no diretorio raiz, utilizando o terminal da IDE de sua escola, crie os seguites diretórios:
+<table style="width: 500px; text-align: center; table-layout: auto; margin: 0 auto;">
+<thead>
+<th colspan=2>WINDOWS</th>
+</thead>
+<tbody>
+    <tr>
+        <th colspan=2 style="padding-top: 15px;"><code>PS C:\ ..\Projeto-AgendaDjango\mkdir dBase</code></th>
+    </tr>
+    <tr>
+        <th colspan=2 style="padding-top: 15px;"><code>PS C:\ ..\Projeto-AgendaDjango\mkdir media</code></th>
+    </tr>
+    <tr>
+        <th colspan="2" style="padding-top: 15px;">LINUX</th>
+    </tr>
+    <tr>
+        <th colspan=2 style="padding-top: 15px;"><code>~/Projeto-AgendaDjango$ mkdir dBase</code></th>
+    </tr>
+    <tr>
+        <th colspan=2 style="padding-top: 15px;"><code>~/Projeto-AgendaDjango$ mkdir media</code></th>
+    </tr>
+</tbody>
+</table>
 
-<code>PS C:\ ..\Projeto-AgendaDjango\mkdir dBase</code> & <code>mkdir media</code>
-
-
+- Em seguida crie um ambiente virtual e instale o Django Framework e o Pillow.
 
 
 <table style="width: 500px; text-align: center; table-layout: auto; margin: 0 auto;">
